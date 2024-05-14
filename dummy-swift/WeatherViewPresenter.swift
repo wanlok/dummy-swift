@@ -56,7 +56,7 @@ class WeatherPresenter {
         }).resume()
     }
     
-    func downloadCurrentWeather(city: City, success: @escaping (City, [String: Any]?)->(), fail: @escaping (City)->()) {
+    func downloadWeather(city: City, success: @escaping (City, [String: Any]?)->(), fail: @escaping (City)->()) {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?appid=\(appid)&lat=\(city.latitude)&lon=\(city.longitude)"
         download(urlString: urlString, success: { json in
             success(city, json as? [String: Any])
@@ -65,12 +65,12 @@ class WeatherPresenter {
         })
     }
     
-    func downloadCurrentWeather() {
+    func downloadWeather() {
         presenterView?.startLoading()
         keys.removeAll()
         values.removeAll()
         for city in cities {
-            downloadCurrentWeather(city: city, success: { city, json in
+            downloadWeather(city: city, success: { city, json in
                 self.keys.append(city)
                 self.values.append(json)
                 if self.keys.count == self.cities.count {
