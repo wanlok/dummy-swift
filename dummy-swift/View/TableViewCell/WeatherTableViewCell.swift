@@ -11,6 +11,7 @@ import UIKit
 class WeatherTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +26,6 @@ class WeatherTableViewCell: UITableViewCell {
     
     func setup(city: City) {
         cityLabel.text = city.name
+        temperatureLabel.text = "\(city.temp)"
     }
 }

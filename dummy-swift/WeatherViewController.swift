@@ -20,7 +20,7 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
         weatherTableView.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
         weatherTableView.dataSource = self
         weatherTableView.delegate = self
-        presenter.downloadCurrentWeather()
+        presenter.download()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,6 +53,8 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func reload() {
-        print(presenter.keys)
+        DispatchQueue.main.async {
+            self.weatherTableView.reloadData()
+        }
     }
 }

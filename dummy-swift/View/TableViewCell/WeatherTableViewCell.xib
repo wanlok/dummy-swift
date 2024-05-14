@@ -17,23 +17,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRd-LS-Lir">
-                        <rect key="frame" x="16" y="16" width="288" height="88"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRd-LS-Lir">
+                        <rect key="frame" x="16" y="15.999999999999998" width="288" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAD-JX-dER">
+                        <rect key="frame" x="16" y="36.333333333333336" width="288" height="67.666666666666657"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="eAD-JX-dER" secondAttribute="trailing" constant="16" id="2qc-mE-Xz0"/>
+                    <constraint firstItem="eAD-JX-dER" firstAttribute="top" secondItem="mRd-LS-Lir" secondAttribute="bottom" id="4hQ-Ro-YH1"/>
                     <constraint firstItem="mRd-LS-Lir" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="CZp-XN-kCX"/>
                     <constraint firstItem="mRd-LS-Lir" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="HYX-UE-9Jr"/>
                     <constraint firstAttribute="trailing" secondItem="mRd-LS-Lir" secondAttribute="trailing" constant="16" id="gag-kT-2qQ"/>
-                    <constraint firstAttribute="bottom" secondItem="mRd-LS-Lir" secondAttribute="bottom" constant="16" id="rTX-TC-6CO"/>
+                    <constraint firstAttribute="bottom" secondItem="eAD-JX-dER" secondAttribute="bottom" constant="16" id="gwF-Lw-xeO"/>
+                    <constraint firstItem="eAD-JX-dER" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mOf-xM-xIZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="cityLabel" destination="mRd-LS-Lir" id="CAu-Tq-Ve6"/>
+                <outlet property="cityLabel" destination="mRd-LS-Lir" id="Akc-oM-SRB"/>
+                <outlet property="temperatureLabel" destination="eAD-JX-dER" id="4wu-dP-c68"/>
             </connections>
             <point key="canvasLocation" x="131.29770992366412" y="17.605633802816904"/>
         </tableViewCell>
