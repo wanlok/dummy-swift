@@ -26,6 +26,6 @@ class WeatherTableViewCell: UITableViewCell {
     
     func setup(city: City) {
         cityLabel.text = city.name
-        temperatureLabel.text = "\(city.temp)"
+        temperatureLabel.text = "\(getCelsius(kelvin: city.temp))°C"
     }
 }

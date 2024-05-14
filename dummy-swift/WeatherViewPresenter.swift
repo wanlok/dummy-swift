@@ -30,9 +30,8 @@ class WeatherPresenter {
         self.presenterView = view
     }
     
-    func downloadWeather(city: City, callback: @escaping (City, [String: Any]?)->()) {
+    func download(city: City, callback: @escaping (City, [String: Any]?)->()) {
         guard let plist = getPlist(name: "secret") as? [String: Any], let appid = plist["appid"] else {
-            print("secret error")
             return
         }
         let urlString = "https://api.openweathermap.org/data/2.5/weather?appid=\(appid)&lat=\(city.latitude)&lon=\(city.longitude)"
@@ -47,7 +46,7 @@ class WeatherPresenter {
         presenterView?.startLoading()
         var downloadedCities: [City] = []
         for city in cities {
-            downloadWeather(city: city, callback: { city, json in
+            download(city: city, callback: { city, json in
                 let main = json?["main"] as? [String: Any]
                 city.temp = main?["temp"] as? Double
                 city.tempMin = main?["temp_min"] as? Double
