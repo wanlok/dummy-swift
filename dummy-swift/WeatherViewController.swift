@@ -16,9 +16,11 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Weather"
-        weatherTableView.register(UINib(nibName: String(describing: WeatherTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: WeatherTableViewCell.self))
+        let identifier = String(describing: WeatherTableViewCell.self)
+        weatherTableView.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
         weatherTableView.dataSource = self
         weatherTableView.delegate = self
+        presenter.downloadCurrentWeather()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,16 +28,16 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: WeatherTableViewCell.self), for: indexPath) as? WeatherTableViewCell {
-            cell.setup(city: presenter.cities[indexPath.row])
-            return cell
-        } else {
+        let identifier = String(describing: WeatherTableViewCell.self)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? WeatherTableViewCell else {
             fatalError("tableView Error")
         }
+        cell.setup(city: presenter.cities[indexPath.row])
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.downloadCurrentWeather(city: presenter.cities[indexPath.row])
+//        presenter.downloadCurrentWeather(city: presenter.cities[indexPath.row])
     }
     
     func startLoading() {
@@ -44,5 +46,13 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func stopLoading() {
         print("stopLoading()")
+    }
+    
+    func prompt(message: String) {
+        print(message)
+    }
+    
+    func reload() {
+        print(presenter.keys)
     }
 }

@@ -111,10 +111,18 @@
 		53CA0BAA2BF35AD200337A49 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53CA0BBB2BF3898700337A49 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53CA0BBB2BF3898700337A49 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				53CA0BAB2BF35B6900337A49 /* WeatherTableViewCell.swift */,
 				53CA0BAC2BF35B6900337A49 /* WeatherTableViewCell.xib */,
 			);
-			path = View;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		53F8185423EA926B005F291C /* Model */ = {
