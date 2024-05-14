@@ -22,4 +22,8 @@ class WeatherTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setup(city: City) {
+        cityLabel.text = city.name
+    }
 }
