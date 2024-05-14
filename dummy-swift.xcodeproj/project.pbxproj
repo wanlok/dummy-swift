@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3BED6B5352F849AF80DD7410 /* Pods_dummy_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02061DC93136F2475E37202 /* Pods_dummy_swift.framework */; };
+		5304724E2BF422BA00F1B1A7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5304724D2BF422BA00F1B1A7 /* Utils.swift */; };
+		530472502BF4236000F1B1A7 /* secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5304724F2BF4236000F1B1A7 /* secret.plist */; };
 		53C7F695208F660A0075C5BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C7F694208F660A0075C5BA /* AppDelegate.swift */; };
 		53C7F69C208F660B0075C5BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C7F69B208F660B0075C5BA /* Assets.xcassets */; };
 		53C7F69F208F660B0075C5BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C7F69D208F660B0075C5BA /* LaunchScreen.storyboard */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		1CE3AD6E4CDF9F4F4A687D70 /* Pods-dummy-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dummy-swift.release.xcconfig"; path = "Target Support Files/Pods-dummy-swift/Pods-dummy-swift.release.xcconfig"; sourceTree = "<group>"; };
+		5304724D2BF422BA00F1B1A7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5304724F2BF4236000F1B1A7 /* secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = secret.plist; sourceTree = "<group>"; };
 		53C7F691208F660A0075C5BA /* dummy-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dummy-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C7F694208F660A0075C5BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53C7F69B208F660B0075C5BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				53CA0BA42BF34A2200337A49 /* WeatherViewController.swift */,
 				53CA0BA52BF34A2200337A49 /* WeatherViewController.xib */,
 				53CA0BB92BF3777900337A49 /* WeatherViewPresenter.swift */,
+				5304724F2BF4236000F1B1A7 /* secret.plist */,
 			);
 			path = "dummy-swift";
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				53C7F6AF208F68210075C5BA /* Style.swift */,
+				5304724D2BF422BA00F1B1A7 /* Utils.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				53CA0BA72BF34A2200337A49 /* WeatherViewController.xib in Resources */,
 				53CA0BAE2BF35B6900337A49 /* WeatherTableViewCell.xib in Resources */,
 				53C7F69F208F660B0075C5BA /* LaunchScreen.storyboard in Resources */,
+				530472502BF4236000F1B1A7 /* secret.plist in Resources */,
 				53C7F69C208F660B0075C5BA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +298,7 @@
 				53CA0BA62BF34A2200337A49 /* WeatherViewController.swift in Sources */,
 				53F8185A23EA92A0005F291C /* SectionOfCustomData.swift in Sources */,
 				53F8185923EA92A0005F291C /* TextTableViewItem.swift in Sources */,
+				5304724E2BF422BA00F1B1A7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

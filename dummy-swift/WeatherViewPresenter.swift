@@ -18,8 +18,6 @@ protocol PresenterView: class {
 class WeatherPresenter {
     weak var presenterView:PresenterView?
 
-    let appid = ""
-
     var cities = [
         City(name: "Sydney", latitude: -33.867926, longitude: 151.21013810170962),
         City(name: "Melbourne", latitude: -37.8141705, longitude: 144.9655616),
@@ -32,31 +30,13 @@ class WeatherPresenter {
         self.presenterView = view
     }
     
-    func download(urlString: String, success: @escaping (Any)->(), fail: @escaping ()->()) {
-        guard let url = URL(string: urlString) else {
-            fail()
+    func downloadWeather(city: City, callback: @escaping (City, [String: Any]?)->()) {
+        guard let plist = getPlist(name: "secret") as? [String: Any], let appid = plist["appid"] else {
+            print("secret error")
             return
         }
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            guard error == nil else {
-                fail()
-                return
-            }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                fail()
-                return
-            }
-            guard let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
-                fail()
-                return
-            }
-            success(json)
-        }).resume()
-    }
-    
-    func downloadWeather(city: City, callback: @escaping (City, [String: Any]?)->()) {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?appid=\(appid)&lat=\(city.latitude)&lon=\(city.longitude)"
-        download(urlString: urlString, success: { json in
+        dummy_swift.download(urlString: urlString, success: { json in
             callback(city, json as? [String : Any])
         }, fail: {
             callback(city, nil)
