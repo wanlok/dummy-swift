@@ -12,9 +12,10 @@ class LandingViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Landing"
     }
     
-    @IBAction func onAPIButtonClicked(_ sender: Any) {
-        print("Hello World")
+    @IBAction func onWeatherButtonClicked(_ sender: Any) {
+        navigationController?.pushViewController(WeatherViewController(), animated: true)
     }
 }

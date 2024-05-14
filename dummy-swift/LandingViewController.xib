@@ -24,13 +24,13 @@
                         <constraint firstAttribute="height" constant="48" id="Foa-nA-grz"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="API">
+                    <buttonConfiguration key="configuration" style="plain" title="Weather">
                         <backgroundConfiguration key="background" cornerRadius="0.0">
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                         </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="onAPIButtonClicked:" destination="-1" eventType="touchUpInside" id="d8a-ag-shH"/>
+                        <action selector="onWeatherButtonClicked:" destination="-1" eventType="touchUpInside" id="aDH-50-xUj"/>
                     </connections>
                 </button>
             </subviews>
