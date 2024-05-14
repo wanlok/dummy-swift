@@ -73,23 +73,15 @@
 			children = (
 				53F8185423EA926B005F291C /* Model */,
 				53C7F6AE208F68180075C5BA /* Common */,
-				53C7F6A6208F66560075C5BA /* Landing */,
 				53C7F694208F660A0075C5BA /* AppDelegate.swift */,
 				53C7F69B208F660B0075C5BA /* Assets.xcassets */,
 				53C7F69D208F660B0075C5BA /* LaunchScreen.storyboard */,
 				53C7F6A0208F660B0075C5BA /* Info.plist */,
 				53C7F6AB208F66AE0075C5BA /* ViewController.swift */,
-			);
-			path = "dummy-swift";
-			sourceTree = "<group>";
-		};
-		53C7F6A6208F66560075C5BA /* Landing */ = {
-			isa = PBXGroup;
-			children = (
 				53C7F6A7208F667F0075C5BA /* LandingViewController.swift */,
 				53C7F6A8208F667F0075C5BA /* LandingViewController.xib */,
 			);
-			path = Landing;
+			path = "dummy-swift";
 			sourceTree = "<group>";
 		};
 		53C7F6AE208F68180075C5BA /* Common */ = {

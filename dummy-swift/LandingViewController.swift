@@ -12,6 +12,9 @@ class LandingViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    @IBAction func onAPIButtonClicked(_ sender: Any) {
+        print("Hello World")
     }
 }
