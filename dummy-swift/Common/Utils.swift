@@ -37,8 +37,8 @@ func getPlist(name: String) -> Any {
     guard let data = FileManager.default.contents(atPath: path) else {
         fatalError("plist data error")
     }
-    guard let dict = try? PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil) else {
-        fatalError("error")
+    guard let plist = try? PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil) else {
+        fatalError("plist error")
     }
-    return dict
+    return plist
 }
