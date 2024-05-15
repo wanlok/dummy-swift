@@ -12,6 +12,8 @@ class WeatherTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var lowestTemperatureLabel: UILabel!
+    @IBOutlet weak var highestTemperatureLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,20 @@ class WeatherTableViewCell: UITableViewCell {
     
     func setup(city: City) {
         cityLabel.text = city.name
-        temperatureLabel.text = "\(getCelsius(kelvin: city.temp))°C"
+        if let celsius = getCelsius(kelvin: city.temp) {
+            temperatureLabel.text = "\(celsius)°C"
+        } else {
+            temperatureLabel.text = ""
+        }
+        if let celsius = getCelsius(kelvin: city.tempMin) {
+            lowestTemperatureLabel.text = "\(celsius)°C"
+        } else {
+            lowestTemperatureLabel.text = ""
+        }
+        if let celsius = getCelsius(kelvin: city.tempMax) {
+            highestTemperatureLabel.text = "\(celsius)°C"
+        } else {
+            highestTemperatureLabel.text = ""
+        }
     }
 }

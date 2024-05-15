@@ -43,12 +43,9 @@ func getPlist(name: String) -> Any {
     return plist
 }
 
-func getCelsius(kelvin: Double?, placeholder: Double=0) -> Double {
-    var celsius = placeholder
-    if let kelvin = kelvin {
-        celsius = kelvin - 273.15
+func getCelsius(kelvin: Double?) -> Double? {
+    guard let kelvin = kelvin else {
+        return nil
     }
-    return round(celsius * 100) / 100.0
+    return round((kelvin - 273.15) * 100) / 100.0
 }
-
-
