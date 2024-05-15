@@ -13,6 +13,8 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     
     lazy var presenter = WeatherPresenter(view: self)
     
+    private let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Weather"
@@ -20,6 +22,16 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
         weatherTableView.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
         weatherTableView.dataSource = self
         weatherTableView.delegate = self
+        if #available(iOS 10.0, *) {
+            weatherTableView.refreshControl = refreshControl
+        } else {
+            weatherTableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        presenter.download()
+    }
+    
+    @objc func refresh(_ sender: Any) {
         presenter.download()
     }
     
@@ -46,6 +58,9 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func stopLoading() {
         print("stopLoading()")
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+        }
     }
     
     func prompt(message: String) {
