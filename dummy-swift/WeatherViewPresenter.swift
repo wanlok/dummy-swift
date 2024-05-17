@@ -8,13 +8,6 @@
 
 import Foundation
 
-protocol PresenterView: class {
-    func startLoading()
-    func stopLoading()
-    func prompt(message: String)
-    func reload()
-}
-
 class WeatherPresenter {
     weak var presenterView:PresenterView?
 
@@ -26,7 +19,7 @@ class WeatherPresenter {
         City(name: "Perth", latitude: -31.954800499999997, longitude: 115.85837364402198),
     ]
     
-    init(view:PresenterView) {
+    init(view: PresenterView) {
         self.presenterView = view
     }
     
@@ -35,7 +28,7 @@ class WeatherPresenter {
             return
         }
         let urlString = "https://api.openweathermap.org/data/2.5/weather?appid=\(appid)&lat=\(city.latitude)&lon=\(city.longitude)"
-        dummy_swift.download(urlString: urlString, success: { json in
+        dummy_swift.download(urlString: urlString, success: { json, json in
             callback(city, json as? [String : Any])
         }, fail: {
             callback(city, nil)
@@ -44,19 +37,21 @@ class WeatherPresenter {
     
     func download() {
         presenterView?.startLoading()
-        var downloadedCities: [City] = []
-        for city in cities {
-            download(city: city, callback: { city, json in
-                let main = json?["main"] as? [String: Any]
-                city.temp = main?["temp"] as? Double
-                city.tempMin = main?["temp_min"] as? Double
-                city.tempMax = main?["temp_max"] as? Double
-                downloadedCities.append(city)
-                if downloadedCities.count == self.cities.count {
-                    self.presenterView?.stopLoading()
-                    self.presenterView?.reload()
-                }
-            })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            var downloadedCities: [City] = []
+            for city in self.cities {
+                self.download(city: city, callback: { city, json in
+                    let main = json?["main"] as? [String: Any]
+                    city.temp = main?["temp"] as? Double
+                    city.tempMin = main?["temp_min"] as? Double
+                    city.tempMax = main?["temp_max"] as? Double
+                    downloadedCities.append(city)
+                    if downloadedCities.count == self.cities.count {
+                        self.presenterView?.stopLoading()
+                        self.presenterView?.reload()
+                    }
+                })
+            }
         }
     }
 }

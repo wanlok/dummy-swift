@@ -68,6 +68,7 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func reload() {
+        print("reload()")
         DispatchQueue.main.async {
             self.weatherTableView.reloadData()
         }

@@ -10,6 +10,7 @@
 		3BED6B5352F849AF80DD7410 /* Pods_dummy_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02061DC93136F2475E37202 /* Pods_dummy_swift.framework */; };
 		5304724E2BF422BA00F1B1A7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5304724D2BF422BA00F1B1A7 /* Utils.swift */; };
 		530472502BF4236000F1B1A7 /* secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5304724F2BF4236000F1B1A7 /* secret.plist */; };
+		530472522BF4AA5700F1B1A7 /* PresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530472512BF4AA5700F1B1A7 /* PresenterView.swift */; };
 		53C7F695208F660A0075C5BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C7F694208F660A0075C5BA /* AppDelegate.swift */; };
 		53C7F69C208F660B0075C5BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C7F69B208F660B0075C5BA /* Assets.xcassets */; };
 		53C7F69F208F660B0075C5BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C7F69D208F660B0075C5BA /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 		1CE3AD6E4CDF9F4F4A687D70 /* Pods-dummy-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dummy-swift.release.xcconfig"; path = "Target Support Files/Pods-dummy-swift/Pods-dummy-swift.release.xcconfig"; sourceTree = "<group>"; };
 		5304724D2BF422BA00F1B1A7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5304724F2BF4236000F1B1A7 /* secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = secret.plist; sourceTree = "<group>"; };
+		530472512BF4AA5700F1B1A7 /* PresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterView.swift; sourceTree = "<group>"; };
 		53C7F691208F660A0075C5BA /* dummy-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dummy-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C7F694208F660A0075C5BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53C7F69B208F660B0075C5BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				53C7F6AF208F68210075C5BA /* Style.swift */,
 				5304724D2BF422BA00F1B1A7 /* Utils.swift */,
+				530472512BF4AA5700F1B1A7 /* PresenterView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				53C7F6A9208F667F0075C5BA /* LandingViewController.swift in Sources */,
 				53CA0BA92BF356DC00337A49 /* City.swift in Sources */,
 				53F8185823EA92A0005F291C /* TableViewItem.swift in Sources */,
+				530472522BF4AA5700F1B1A7 /* PresenterView.swift in Sources */,
 				53C7F695208F660A0075C5BA /* AppDelegate.swift in Sources */,
 				53C7F6B0208F68210075C5BA /* Style.swift in Sources */,
 				53CA0BBA2BF3777900337A49 /* WeatherViewPresenter.swift in Sources */,
@@ -364,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -415,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
