@@ -28,7 +28,7 @@ class WeatherPresenter {
             return
         }
         let urlString = "https://api.openweathermap.org/data/2.5/weather?appid=\(appid)&lat=\(city.latitude)&lon=\(city.longitude)"
-        dummy_swift.download(urlString: urlString, success: { json, json in
+        dummy_swift.download(urlString: urlString, success: { json in
             callback(city, json as? [String : Any])
         }, fail: {
             callback(city, nil)

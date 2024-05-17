@@ -13,6 +13,10 @@ class LandingViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Landing"
+        
+        let overlayView = addOverlayView(self)
+        overlayView.dummyLabel.text = "Good"
+//        overlayView.removeFromSuperview()
     }
     
     @IBAction func onWeatherButtonClicked(_ sender: Any) {
