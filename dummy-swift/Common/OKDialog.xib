@@ -22,18 +22,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9c-tA-GQo">
-                    <rect key="frame" x="152.66666666666666" y="410.66666666666669" width="88" height="56"/>
+                    <rect key="frame" x="16" y="390.66666666666669" width="361" height="96"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cun-dz-kFY">
-                            <rect key="frame" x="0.0" y="0.0" width="88" height="21"/>
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="zcF-xV-KCm"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWq-Ke-qU0">
-                            <rect key="frame" x="0.0" y="21" width="88" height="35"/>
+                            <rect key="frame" x="0.0" y="48" width="361" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="qiJ-hw-VIh"/>
+                            </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="OK">
+                                <backgroundConfiguration key="background" cornerRadius="0.0">
+                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                </backgroundConfiguration>
+                            </buttonConfiguration>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,8 +61,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Q9c-tA-GQo" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="9EQ-oo-eOT"/>
+                <constraint firstItem="Q9c-tA-GQo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ma7-8V-QG8"/>
                 <constraint firstItem="Q9c-tA-GQo" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="qRZ-kk-T4S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Q9c-tA-GQo" secondAttribute="trailing" constant="16" id="vk9-az-w8S"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
@@ -60,6 +71,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

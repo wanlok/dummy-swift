@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,16 +31,34 @@
                         </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="onWeatherButtonClicked:" destination="-1" eventType="touchUpInside" id="aDH-50-xUj"/>
+                        <action selector="onWeatherButtonClicked:" destination="-1" eventType="touchUpInside" id="YV4-dx-lZE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vq6-WP-wMT">
+                    <rect key="frame" x="16" y="80" width="343" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="094-UM-ZQG"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="OK Dialog">
+                        <backgroundConfiguration key="background" cornerRadius="0.0">
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        </backgroundConfiguration>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="onConfirmationDialogButtonClicked:" destination="-1" eventType="touchUpInside" id="bdc-fk-xnl"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vq6-WP-wMT" secondAttribute="trailing" constant="16" id="9om-Hk-Qni"/>
                 <constraint firstItem="P3x-yi-XG9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Dcu-qf-ic5"/>
                 <constraint firstItem="P3x-yi-XG9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Inz-Ig-Vh4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P3x-yi-XG9" secondAttribute="trailing" constant="16" id="TYt-Rn-2q8"/>
+                <constraint firstItem="vq6-WP-wMT" firstAttribute="top" secondItem="P3x-yi-XG9" secondAttribute="bottom" constant="16" id="Wey-la-FVx"/>
+                <constraint firstItem="vq6-WP-wMT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Wh9-bc-7DH"/>
             </constraints>
             <point key="canvasLocation" x="24.800000000000001" y="50.824587706146929"/>
         </view>
